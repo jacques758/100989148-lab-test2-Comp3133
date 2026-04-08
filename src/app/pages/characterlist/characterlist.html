@@ -1,0 +1,21 @@
+<h2 class="page-title">{{ pageTitle }}</h2>
+
+<app-characterfilter (houseChanged)="onHouseSelected($event)"></app-characterfilter>
+
+<p *ngIf="loading" class="status-message">Loading characters...</p>
+<p *ngIf="!loading && errorMessage" class="status-message">{{ errorMessage }}</p>
+
+<div class="card-grid" *ngIf="!loading">
+  <mat-card
+  class="character-card"
+  *ngFor="let character of characters"
+  [routerLink]="['/character', character.id]"
+>
+    <img mat-card-image [src]="character.image" [alt]="character.name" />
+
+    <mat-card-content>
+      <h3>{{ character.name }}</h3>
+      <p class="house">{{ character.house || 'No House' }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

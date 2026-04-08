@@ -1,0 +1,24 @@
+button {
+  margin-bottom: 16px;
+}
+
+.details-card {
+  display: flex;
+  gap: 24px;
+  padding: 16px;
+  align-items: flex-start;
+}
+
+.details-image {
+  width: 320px;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.details-content {
+  flex: 1;
+}
+
+.details-content h2 {
+  margin-top: 0;
+}
